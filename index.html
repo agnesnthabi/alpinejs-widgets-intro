@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpine.js Counter Widget</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+    
 </head>
-<body>
+<body >
     <div x-data="{ count: 0, maxCount: 10 }" class="container">
-        <h1>Counter</h1>
-        <div class="counter" x-text="count"></div>
-        <div>
-            <button class="increment" @click="count < maxCount ? count++ : count">Increment</button>
-            <button class="decrement" @click="count > 0 ? count-- : count">Decrement</button>
-            <button class="reset" @click="count = 0">Reset</button>
-        </div>
-    </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <h1>Counter widget with AlpineJS & other widgets</h1>
+        <nav>
+            <ul>
+              <a href=counter.html>Counter Widget</a>
+             </ul>
+            <ul>
+              <a href=alpinejs.html>AlpineJS Widget</a>
+            </ul>
+          </nav>
 </body>
 </html>
 

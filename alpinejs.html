@@ -3,10 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpine JS</title>
+    <title>Alpine JS Widgets Intro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
 </head>
 <body>
+    <div class="container">
+        <h1 class="my-4">AlpineJS Widgets</h1>
+        
+        <div class="flex-container">
+            
+            <div class="widget" x-data="{ title: 'Hello Coders' }">
+                <p x-text="title"></p>
+                <div class="button-container">
+                    <button class="btn" x-on:click="title='Welcome to my first widget mentors!'">click here</button>
+                    <button class="btn" x-on:click="title='Now let\'s dive in!'">click for more</button>
+                </div>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+            <div class="widget" x-data="{ show: false }">
+                <button @click="show=!show">Show</button>
+                <div x-show="show">It's about to get interesting!</div>
+            </div>
+
+            <div class="widget" x-data="{ title: 'Coding is Awesome' }">
+                <p x-text="title"></p>
+                <input type="text" x-model="title">
+            </div>
+
+            <div class="widget" x-data="{ count: 1 }">
+                <p x-text="count"></p>
+                <button @click="count++">Count Up</button>
+                <button @click="count--">Count Down</button>
+            </div>
+
+            <div class="widget" x-data="{ socks: 'pink' }">
+                <template x-if="socks=='pink'">
+                    <p>My socks are pink</p>
+                </template>
+                <template x-if="socks=='white'">
+                    <p>My socks are white</p>
+                </template>
+                <button @click="socks = 'white'">Change Socks</button>
+            </div>
+
+            <div class="widget" x-data="{ groceries: ['Bread', 'Eggs', 'Cheese', 'Cake', 'Sweets', 'bananas'] }">
+                <p>Grocery List</p>
+                <ol>
+                    <template x-for="item in groceries">
+                        <li x-text="item"></li>
+                    </template>
+                </ol>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>
